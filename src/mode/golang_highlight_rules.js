@@ -14,8 +14,7 @@ var oop = require("../lib/oop");
             "float64|complex64|complex128|byte|rune|uint|int|uintptr|bool|error|comparable"
         );
         var builtinFunctions = (
-            "new|close|cap|copy|panic|panicln|print|println|len|make|delete|real|recover|imag|append|" +
-            "clear|max|min"
+            "new|close|cap|copy|panic|panicln|print|println|len|make|delete|real|recover|imag|append"
         );
         var builtinConstants = ("nil|true|false|iota");
 

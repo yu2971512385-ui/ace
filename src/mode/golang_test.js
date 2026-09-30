@@ -9,16 +9,13 @@ module.exports = {
         this.mode = new GolangMode();
     },
 
-    "test: predeclared identifiers added in Go 1.18 and 1.21" : function() {
+    "test: predeclared types added in Go 1.18" : function() {
         var tokenizer = this.mode.getTokenizer();
         function typeOf(line, index) {
             return tokenizer.getLineTokens(line, "start").tokens[index].type;
         }
         assert.equal("support.type", typeOf("var x any", 4));
         assert.equal("support.type", typeOf("type S[E comparable] int", 6));
-        assert.equal("support.function", typeOf("clear(m)", 0));
-        assert.equal("support.function", typeOf("min(1, 2)", 0));
-        assert.equal("support.function", typeOf("max(1, 2)", 0));
         assert.equal("support.type", typeOf("var e error", 4));
     },
 
